@@ -6,7 +6,7 @@ const connection = new Connection(clusterApiUrl("devnet"));
 
 const MINOR_UNITS_PER_MAJOR_UNITS = Math.pow(10, 2);
 
-const user = getKeypairFromEnvironment("SECRET_KEY");
+const user = getKeypairFromEnvironment("SECRET_KEY_OTHER");
 
 const tokenMintAccount = new PublicKey("7T8MmKqJUxB1XbSGQxBo16ZPsm1CZu9rqaGfepBbxQ7c");
 
@@ -20,7 +20,7 @@ const transactionSignature = await mintTo(
     tokenMintAccount,
     recipientAssociatedTokenAccount,
     user,
-    100 * MINOR_UNITS_PER_MAJOR_UNITS,
+    1 * MINOR_UNITS_PER_MAJOR_UNITS,
 );
 
 const link = getExplorerLink("transaction", transactionSignature, "devnet");
